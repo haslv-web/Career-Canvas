@@ -1,0 +1,10 @@
+{
+  "name": "Career Canvas",
+  "description": "AI-Driven Career Curation Platform for visual career roadmaps and potential discovery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "AI-driven career analysis",
+    "Interactive roadmaps",
+    "Data-driven career dashboards"
+  ]
+}

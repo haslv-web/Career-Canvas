@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2D5BFF;
+  --color-accent: #8A4FFF;
+  --color-soft-white: #FDFDFD;
+  --font-sans: "Pretendard", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-soft-white text-slate-900 antialiased relative;
+    font-family: var(--font-sans);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(var(--color-primary) 0.5px, transparent 0.5px);
+    background-size: 32px 32px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/75 backdrop-blur-md border border-primary/10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] rounded-[20px];
+  }
+  
+  .btn-primary {
+    @apply relative overflow-hidden bg-primary text-white px-5 py-2.5 rounded-xl font-semibold transition-all hover:shadow-lg active:scale-95 text-sm;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary border border-primary/20 px-6 py-3 rounded-xl font-medium transition-all hover:bg-primary/5 active:scale-95;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
