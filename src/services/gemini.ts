@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { UserDiagnosticData, CareerCanvasData } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: AQ.Ab8RN6J0WIdq0V-GOc2VZgECwpEZ5pHZL7Vf1GAH7lrOroCLVA });
+const ai = new GoogleGenAI({ apiKey: "AQ.Ab8RN6J0WIdq0V-GOc2VZgECwpEZ5pHZL7Vf1GAH7lrOroCLVA" });
 
 export async function generateCareerCuration(data: UserDiagnosticData): Promise<CareerCanvasData> {
   const prompt = `
